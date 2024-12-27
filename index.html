@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Year Resolutions | Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playwrite+AU+SA:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#EFEFEF] font-eb">
+    <header class="mt-5 max-w-[400px] m-auto">
+      <h2 class="text-3xl font-bold flex justify-center">2025</h2>
+      <h1 class="text-3xl font-bold flex justify-center mb-5">
+        New Year Resolutions
+      </h1>
+      <button
+        id="addGoalBoxBtn"
+        class="add-goal-btn bg-[#CD1624] text-[#FAF8F8] p-3 rounded-xl w-[150px] m-auto block"
+      >
+        Add you goals
+      </button>
+      <section>
+        <div class="mt-5">
+          <div class="mb-2 flex justify-between items-center">
+            <h3 class="text-sm font-semibold">Your progress so far</h3>
+            <span class="text-sm">25%</span>
+          </div>
+          <div
+            class="flex w-full h-2 bg-stone-900 rounded-full overflow-hidden"
+            role="progressbar"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#CD1624] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              style="width: 25%"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section
+      id="addGoalBox"
+      class="absolute min-w-[450px] -translate-x-[50%] left-[50%] mt-5 p-10 bg-[#006F57] text-[#FAF8F8] rounded-md drop-shadow-xl hidden"
+    >
+      <button id="crossBtn" class="block ml-auto">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 pointer-events-none"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <h2 class="text-2xl font-bold flex justify-center mb-5">
+        Add your goals
+      </h2>
+      <section class="flex flex-col justify-between gap-2">
+        <select
+          name="title"
+          id="title"
+          class="bg-[#FAF8F8] rounded-xl flex-grow ps-3 text-stone-950 focus-visible:outline-none h-[48px]"
+        >
+          <option value="">Choose a category</option>
+          <option value="Personal Development">Personal Development</option>
+          <option value="Health & Fitness">Health & Fitness</option>
+          <option value="Financial Goals">Financial Goals</option>
+          <option value="Hobbies & Interests">Hobbies & Interests</option>
+          <option value="Relationships & Social">Relationships & Social</option>
+          <option value="Travel & Adventure">Travel & Adventure</option>
+          <option value="Charity & Giving Back">Charity & Giving Back</option>
+          <option value="General">General</option>
+        </select>
+        <input
+          type="text"
+          id="goalInput"
+          class="bg-[#FAF8F8] rounded-xl flex-grow ps-3 text-stone-950 focus-visible:outline-none h-[48px]"
+        />
+        <button
+          id="addBtn"
+          class="bg-[#CD1624] p-3 rounded-xl w-[100px] block ml-auto"
+        >
+          Add
+        </button>
+      </section>
+    </section>
+    <main>
+      <section
+        class="list-group max-w-[450px] mt-5 m-auto p-10 bg-[#006F57] text-[#FAF8F8] rounded-md"
+        id="listGroup"
+      >
+        <h4 class="text-xl font-bold text-center">Your goals</h4>
+        <div class="w-[200px] m-auto mt-5 last:block hidden">
+          <img
+            src="./src/img/empty.svg"
+            alt="empty-stage"
+            class="w-full h-full"
+          />
+          <p class="mt-5 text-center font-semibold text-md">
+            Add some of your goal
+          </p>
+        </div>
+      </section>
+    </main>
+    <template id="listTemplate">
+      <div class="list">
+        <div
+          class="mt-5 flex flex-col justify-between p-5 rounded-xl bg-[#FAF8F8] text-[#1C1917]"
+        >
+          <h5 class="title-text text-sm font-bold mb-1 text-left"></h5>
+          <div class="flex justify-between">
+            <div class="flex gap-3 items-center justify-center font-playwrite">
+              <div class="w-0.5 h-5 bg-[#CD1624]"></div>
+              <p class="goal-text text-lg"></p>
+            </div>
+            <div class="flex gap-2">
+              <button class="bg-[#23856D] p-1 rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"
+                  />
+                </svg>
+              </button>
+              <button class="bg-[#23856D] p-1 rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+              </button>
+              <button class="del-btn bg-[#CD1624] p-1 rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
