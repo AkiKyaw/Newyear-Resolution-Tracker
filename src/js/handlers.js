@@ -16,7 +16,7 @@ export const addBtnHandler = (event) => {
   if (!goalInput.value.trim() || !title.value) {
     alert("Both category and goal must be input");
   } else {
-    addGoal(goalInput.value, title.value);
+    addGoal(title.value, goalInput.value);
     hideBox();
   }
 };

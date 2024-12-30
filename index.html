@@ -9,15 +9,15 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[#EFEFEF] font-eb">
+  <body class="bg-[#EFEFEF] m-3">
     <header class="mt-5 max-w-[400px] m-auto">
       <h2 class="text-3xl font-bold flex justify-center">2025</h2>
-      <h1 class="text-3xl font-bold flex justify-center mb-5">
+      <h1 class="text-3xl font-bold flex justify-center text-center mb-5">
         New Year Resolutions
       </h1>
       <button
         id="addGoalBoxBtn"
-        class="add-goal-btn bg-[#CD1624] text-[#FAF8F8] flex gap-2 p-3 rounded-xl m-auto"
+        class="add-goal-btn bg-[#CD1624] text-[#FAF8F8] flex gap-2 p-3 rounded-xl m-auto items-center"
       >
         Add your goals<svg
           xmlns="http://www.w3.org/2000/svg"
@@ -38,18 +38,19 @@
         <div class="mt-5">
           <div class="mb-2 flex justify-between items-center">
             <h3 class="text-sm font-semibold">Your progress so far</h3>
-            <span class="text-sm">25%</span>
+            <span id="progressPercent" class="text-sm">0%</span>
           </div>
           <div
+            id="progressar"
             class="flex w-full h-2 bg-stone-900 rounded-full overflow-hidden"
             role="progressbar"
-            aria-valuenow="25"
+            aria-valuenow="0"
             aria-valuemin="0"
             aria-valuemax="100"
           >
             <div
-              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#CD1624] text-xs text-white text-center whitespace-nowrap transition duration-500"
-              style="width: 25%"
+              class="done-progress flex flex-col justify-center rounded-full overflow-hidden bg-[#CD1624] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              style="width: 0%"
             ></div>
           </div>
         </div>
@@ -58,7 +59,7 @@
 
     <section
       id="addGoalBox"
-      class="absolute z-50 min-w-[450px] -translate-x-[50%] left-[50%] mt-5 p-10 bg-[#006F57] text-[#FAF8F8] rounded-md drop-shadow-xl hidden"
+      class="absolute z-50 max-w-[450px] -translate-x-[50%] left-[50%] mt-5 p-10 bg-[#006F57] text-[#FAF8F8] rounded-md drop-shadow-xl border-2 border-dashed border-black hidden"
     >
       <button id="crossBtn" class="block ml-auto">
         <svg
@@ -113,7 +114,7 @@
 
     <section
       id="editBox"
-      class="absolute z-50 min-w-[450px] -translate-x-[50%] left-[50%] mt-5 p-10 bg-[#006F57] text-[#FAF8F8] rounded-md drop-shadow-xl hidden"
+      class="absolute z-50 max-w-[450px] -translate-x-[50%] left-[50%] mt-5 p-10 bg-[#006F57] text-[#FAF8F8] rounded-md drop-shadow-xl border-2 border-dashed border-black hidden"
     >
       <button id="editCrossBtn" class="block ml-auto">
         <svg
@@ -171,11 +172,11 @@
         id="listGroup"
       >
         <h4 class="text-xl font-bold text-center">Your goals</h4>
-        <div class="w-[200px] m-auto mt-5 last:block hidden">
+        <div class="m-auto mt-5 last:block hidden">
           <img
             src="./src/img/empty.svg"
             alt="empty-stage"
-            class="w-full h-full"
+            class="w-[100px] m-auto"
           />
           <p class="mt-5 text-center font-semibold text-md">
             Add some of your goal
@@ -189,9 +190,24 @@
           class="mt-5 flex flex-col justify-between p-5 rounded-xl bg-[#FAF8F8] text-[#1C1917]"
         >
           <h5 class="title-text text-sm font-bold mb-1 text-left"></h5>
-          <div class="flex justify-between">
-            <div class="flex gap-3 items-center justify-center font-playwrite">
-              <div class="icon w-0.5 h-5 bg-[#CD1624]"></div>
+          <div class="flex justify-between items-center">
+            <div class="flex gap-3 items-center justify-center">
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-4 text-[#CD1624]"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z"
+                  />
+                </svg>
+              </div>
               <div class="icon-done hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +215,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-6 text-yellow-500"
+                  class="size-4 text-yellow-500"
                 >
                   <path
                     stroke-linecap="round"
@@ -208,10 +224,10 @@
                   />
                 </svg>
               </div>
-              <p class="goal-text text-lg"></p>
+              <p class="goal-text text-md max-w-[230px]"></p>
             </div>
-            <div class="flex gap-2">
-              <button class="edit-btn bg-[#23856D] p-1 rounded-lg">
+            <div class="flex flex-col gap-1 md:flex-row">
+              <button class="edit-btn bg-[#23856D] p-1 rounded-lg size-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -227,7 +243,7 @@
                   />
                 </svg>
               </button>
-              <button class="done-btn bg-[#23856D] p-1 rounded-lg">
+              <button class="done-btn bg-[#23856D] p-1 rounded-lg size-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -243,7 +259,7 @@
                   />
                 </svg>
               </button>
-              <button class="del-btn bg-[#CD1624] p-1 rounded-lg">
+              <button class="del-btn bg-[#CD1624] p-1 rounded-lg size-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

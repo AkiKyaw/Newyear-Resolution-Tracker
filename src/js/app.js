@@ -9,6 +9,13 @@ import {
   listTemplate,
   title,
 } from "./selector.js";
+import { v4 as uuidv4 } from "uuid";
+
+export const goals = [
+  { title: "Financial Goals", description: "Save $5,000 this year." },
+  { title: "Travel", description: "Visit Kyoto in spring." },
+  { title: "Health", description: "Run a 5K in under 30 minutes." },
+];
 
 export const addBox = () => {
   addGoalBox.classList.remove("hidden");
@@ -21,16 +28,16 @@ export const hideBox = () => {
   editBox.classList.add("hidden");
 };
 
-export const createNewList = (currentTask, currentTaskTitle) => {
+export const createNewList = (currentTaskTitle, currentTask) => {
   const list = listTemplate.content.cloneNode(true);
-  list.querySelector(".list").id = "list" + Date.now();
+  list.querySelector(".list").id = "list" + uuidv4();
   list.querySelector(".goal-text").innerText = currentTask;
   list.querySelector(".title-text").innerText = currentTaskTitle;
   return list;
 };
 
-export const addGoal = (text, titleText) => {
-  listGroup.append(createNewList(text, titleText));
+export const addGoal = (titleText, text) => {
+  listGroup.append(createNewList(titleText, text));
   goalInput.value = null;
 };
 
@@ -68,7 +75,7 @@ export const doneGoal = (listId) => {
   icon.classList.toggle("hidden");
   iconDone.classList.toggle("hidden");
 
-  // currentList.classList.toggle("opacity-50");
+  currentList.classList.toggle("opacity-50");
   currentList.classList.toggle("scale-90");
 
   editBtn.classList.toggle("hidden");

@@ -11,3 +11,4 @@ export const editTitle = document.querySelector("#editTitle");
 export const editGoalInput = document.querySelector("#editGoalInput");
 export const changeBtn = document.querySelector("#changeBtn");
 export const editCrossBtn = document.querySelector("#editCrossBtn");
+export const progressBar = document.querySelector(".done-progress");

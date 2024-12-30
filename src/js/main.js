@@ -1,4 +1,6 @@
 import "../app.css";
-import listener from "./listener.js";
+import Tracker from "./Tracker.js";
 
-listener();
+const app = new Tracker;
+
+app.init();
