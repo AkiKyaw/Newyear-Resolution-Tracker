@@ -68,8 +68,8 @@ export const doneGoal = (listId) => {
   icon.classList.toggle("hidden");
   iconDone.classList.toggle("hidden");
 
-  currentList.classList.toggle("opacity-50");
+  // currentList.classList.toggle("opacity-50");
   currentList.classList.toggle("scale-90");
-  
+
   editBtn.classList.toggle("hidden");
 };
