@@ -51,7 +51,8 @@ export const editGoal = (listId) => {
 
   editTitle.value = titleText.innerText;
   editGoalInput.value = goalText.innerText;
- 
+  console.log(editTitle.value);
+
   changeBtn.addEventListener("click", () => {
     titleText.innerText = editTitle.value;
     goalText.innerText = editGoalInput.value;
