@@ -5,9 +5,9 @@ import observer from "./observer.js";
 
 class Tracker {
     init(){
-        initialRender();
         listener();
         observer();
+        initialRender();
     }
 }
 

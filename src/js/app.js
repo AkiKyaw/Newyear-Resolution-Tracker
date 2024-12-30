@@ -21,6 +21,7 @@ export const goals = [
 export const addBox = () => {
   addGoalBox.classList.remove("hidden");
   addGoalBox.classList.add("block");
+  goalInput.focus();
 };
 
 export const hideBox = () => {
@@ -44,9 +45,10 @@ export const addGoal = (titleText, text) => {
 
 export const delGoal = (listId) => {
   const currentList = document.querySelector(`#${listId}`);
+  const text = currentList.querySelector(".goal-text");
   Swal.fire({
     title: "Are you sure?",
-    text: "You will not be able to undo this action!",
+    text: `You are going to delete "${text.innerText}"`,
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#23856D",
@@ -65,6 +67,7 @@ export const delGoal = (listId) => {
 export const editGoal = (listId) => {
   editBox.classList.remove("hidden");
   editBox.classList.add("block");
+  editGoalInput.focus();
 
   const currentList = document.querySelector(`#${listId}`);
   const titleText = currentList.querySelector(".title-text");
@@ -91,6 +94,7 @@ export const doneGoal = (listId) => {
 
   currentList.classList.toggle("opacity-50");
   currentList.classList.toggle("scale-90");
+  currentList.classList.add("duration-150")
 
   editBtn.classList.toggle("hidden");
 };

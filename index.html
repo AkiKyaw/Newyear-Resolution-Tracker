@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./public/logo.png" />
+
     <!-- Primary Meta Tags -->
     <title>Better year resolution tracker</title>
     <meta name="title" content="Better year resolution tracker" />
@@ -40,30 +42,12 @@
     <!-- Meta Tags Generated with https://metatags.io -->
   </head>
   <body class="bg-[#EFEFEF] m-3">
-    <header class="mt-5 max-w-[400px] m-auto">
-      <h2 class="text-3xl font-bold flex justify-center">2025</h2>
-      <h1 class="text-3xl font-bold flex justify-center text-center mb-5">
-        New Year Resolutions
+    <header class="mt-4 max-w-[400px] m-auto">
+      <!-- <h2 class="text-3xl font-bold flex justify-center">2025</h2> -->
+      <h1 class="text-3xl font-bold flex text-[#006F57] justify-center text-center mb-5">
+        New Year Resolutions Tracker
       </h1>
-      <button
-        id="addGoalBoxBtn"
-        class="add-goal-btn bg-[#CD1624] text-[#FAF8F8] flex gap-2 p-3 rounded-xl m-auto items-center"
-      >
-        Add your goals<svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-          />
-        </svg>
-      </button>
+
       <section>
         <div class="mt-5">
           <div class="mb-2 flex justify-between items-center">
@@ -72,7 +56,7 @@
           </div>
           <div
             id="progressar"
-            class="flex w-full h-2 bg-stone-900 rounded-full overflow-hidden"
+            class="flex w-full h-3 bg-stone-900 rounded-full overflow-hidden"
             role="progressbar"
             aria-valuenow="0"
             aria-valuemin="0"
@@ -87,64 +71,66 @@
       </section>
     </header>
 
-    <section
-      id="addGoalBox"
-      class="absolute z-50 max-w-[450px] -translate-x-[50%] left-[50%] mt-5 p-10 bg-[#006F57] text-[#FAF8F8] rounded-md drop-shadow-xl border-2 border-dashed border-black hidden"
-    >
-      <button id="crossBtn" class="block ml-auto">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6 pointer-events-none"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18 18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
-      <h2 class="text-2xl font-bold flex justify-center mb-5">
-        Add your goals
-      </h2>
-      <section class="flex flex-col justify-between gap-2">
-        <select
-          name="title"
-          id="title"
-          class="bg-[#FAF8F8] rounded-xl flex-grow ps-3 text-stone-950 focus-visible:outline-none h-[48px]"
-        >
-          <option value="">Choose a category</option>
-          <option value="Personal Development">Personal Development</option>
-          <option value="Health">Health</option>
-          <option value="Financial Goals">Financial Goals</option>
-          <option value="Hobbies">Hobbies</option>
-          <option value="Relationships and Social">
-            Relationships and Social
-          </option>
-          <option value="Travel">Travel</option>
-          <option value="Charity">Charity</option>
-          <option value="General">General</option>
-        </select>
-        <input
-          type="text"
-          id="goalInput"
-          class="bg-[#FAF8F8] rounded-xl flex-grow ps-3 text-stone-950 focus-visible:outline-none h-[48px]"
-        />
-        <button
-          id="addBtn"
-          class="bg-[#CD1624] p-3 rounded-xl w-[100px] block ml-auto"
-        >
-          Add
+    <section>
+      <div
+        id="addGoalBox"
+        class="fixed sm:min-w-[500px] max-sm:min-w-[300px] w z-50 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 p-10 bg-[#006F57] text-[#FAF8F8] rounded-2xl drop-shadow-xl hidden border border-[#23856D]"
+      >
+        <button id="crossBtn" class="block ml-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 pointer-events-none"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
         </button>
-      </section>
+        <h2 class="text-2xl font-bold flex justify-center mb-5">
+          Add your goals
+        </h2>
+        <div class="flex flex-col justify-between gap-2">
+          <select
+            name="title"
+            id="title"
+            class="bg-[#FAF8F8] rounded-xl flex-grow ps-3 text-stone-950 focus-visible:outline-none h-[48px]"
+          >
+            <option value="">Choose a category</option>
+            <option value="Personal Development">Personal Development</option>
+            <option value="Health">Health</option>
+            <option value="Financial Goals">Financial Goals</option>
+            <option value="Hobbies">Hobbies</option>
+            <option value="Relationships and Social">
+              Relationships and Social
+            </option>
+            <option value="Travel">Travel</option>
+            <option value="Charity">Charity</option>
+            <option value="General">General</option>
+          </select>
+          <input
+            type="text"
+            id="goalInput"
+            class="bg-[#FAF8F8] rounded-xl flex-grow ps-3 text-stone-950 focus-visible:outline-none h-[48px]"
+          />
+          <button
+            id="addBtn"
+            class="bg-[#CD1624] p-3 rounded-xl w-[100px] block ml-auto"
+          >
+            Add
+          </button>
+        </div>
+      </div>
     </section>
 
     <section
       id="editBox"
-      class="absolute z-50 max-w-[450px] -translate-x-[50%] left-[50%] mt-5 p-10 bg-[#006F57] text-[#FAF8F8] rounded-md drop-shadow-xl border-2 border-dashed border-black hidden"
+      class="fixed sm:min-w-[500px] max-sm:min-w-[300px] w z-50 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 p-10 bg-[#006F57] text-[#FAF8F8] rounded-2xl drop-shadow-xl hidden border border-[#23856D]"
     >
       <button id="editCrossBtn" class="block ml-auto">
         <svg
@@ -196,12 +182,35 @@
         </button>
       </section>
     </section>
+
     <main>
       <section
         class="list-group max-w-[450px] mt-5 m-auto p-10 bg-[#006F57] text-[#FAF8F8] rounded-md"
         id="listGroup"
       >
-        <h4 class="text-xl font-bold text-center">Your goals</h4>
+        <div class="flex justify-between items-center">
+          <h4 class="text-xl font-bold text-center">Your Goals</h4>
+          <button
+            id="addGoalBoxBtn"
+            class="add-goal-btn bg-[#CD1624] text-[#FAF8F8] text-sm flex gap-2 p-3 rounded-xl items-center"
+          >
+            <span class="max-sm:hidden">Add New</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+          </button>
+        </div>
         <div class="m-auto mt-5 last:block hidden">
           <img
             src="./src/img/empty.svg"
@@ -214,6 +223,13 @@
         </div>
       </section>
     </main>
+
+    <div class="flex gap-12 justify-center m-4">
+      <button id="doneAllBtn" class="bg-[#23856D] text-stone-950 px-4 py-2 rounded-lg ">Complete All</button>
+
+      <button id="delAllBtn" class="bg-[#CD1624] text-[#FAF8F8] px-4 py-2 rounded-lg ">Delete All</button>
+    </div>
+
     <template id="listTemplate">
       <div class="list">
         <div
@@ -289,7 +305,7 @@
                   />
                 </svg>
               </button>
-              <button class="del-btn bg-[#CD1624] p-1 rounded-lg size-6">
+              <button class="del-btn bg-[#CD1624] text-[#FAF8F8] p-1 rounded-lg size-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
