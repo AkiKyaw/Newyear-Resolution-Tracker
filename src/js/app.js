@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import {
   addGoalBox,
   changeBtn,
@@ -43,9 +44,22 @@ export const addGoal = (titleText, text) => {
 
 export const delGoal = (listId) => {
   const currentList = document.querySelector(`#${listId}`);
-  if (window.confirm("Are you sure to delete this task?")) {
-    currentList.remove();
-  }
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You will not be able to undo this action!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#23856D",
+    cancelButtonColor: "#CD1624",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      currentList.classList.add("animate__animated", "animate__flipOutX");
+      currentList.addEventListener("animationend", () => {
+        currentList.remove();
+      });
+    }
+  });
 };
 
 export const editGoal = (listId) => {

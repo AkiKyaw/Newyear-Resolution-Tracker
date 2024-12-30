@@ -1,3 +1,18 @@
+@import url("../node_modules/animate.css/animate.min.css");
+@import url("../node_modules/sweetalert2/dist/sweetalert2.min.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swal2-confirm, .swal2-cancel{
+    @apply rounded-lg
+}
+
+.swal2-warning {
+    @apply border-[#BB010B] text-[#BB010B] !important
+}
+
+.swal2-modal{
+    @apply max-w-[400px]
+}
