@@ -17,9 +17,22 @@
       </h1>
       <button
         id="addGoalBoxBtn"
-        class="add-goal-btn bg-[#CD1624] text-[#FAF8F8] p-3 rounded-xl w-[150px] m-auto block"
+        class="add-goal-btn bg-[#CD1624] text-[#FAF8F8] flex gap-2 p-3 rounded-xl m-auto "
       >
-        Add you goals
+        Add your goals<svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
       </button>
       <section>
         <div class="mt-5">
@@ -74,12 +87,12 @@
         >
           <option value="">Choose a category</option>
           <option value="Personal Development">Personal Development</option>
-          <option value="Health & Fitness">Health & Fitness</option>
+          <option value="Health">Health</option>
           <option value="Financial Goals">Financial Goals</option>
-          <option value="Hobbies & Interests">Hobbies & Interests</option>
-          <option value="Relationships & Social">Relationships & Social</option>
-          <option value="Travel & Adventure">Travel & Adventure</option>
-          <option value="Charity & Giving Back">Charity & Giving Back</option>
+          <option value="Hobbies">Hobbies</option>
+          <option value="Relationships and Social">Relationships and Social</option>
+          <option value="Travel">Travel</option>
+          <option value="Charity">Charity</option>
           <option value="General">General</option>
         </select>
         <input
@@ -92,6 +105,59 @@
           class="bg-[#CD1624] p-3 rounded-xl w-[100px] block ml-auto"
         >
           Add
+        </button>
+      </section>
+    </section>
+
+    <section 
+      id="editBox"
+      class="absolute min-w-[450px] -translate-x-[50%] left-[50%] mt-5 p-10 bg-[#006F57] text-[#FAF8F8] rounded-md drop-shadow-xl hidden"
+    >
+      <button id="editCrossBtn" class="block ml-auto">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 pointer-events-none"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <h2 class="text-2xl font-bold flex justify-center mb-5">
+        Edit your goal
+      </h2>
+      <section class="flex flex-col justify-between gap-2">
+        <select
+          name="title"
+          id="editTitle"
+          class="bg-[#FAF8F8] rounded-xl flex-grow ps-3 text-stone-950 focus-visible:outline-none h-[48px]"
+        >
+          <option value="">Choose a category</option>
+          <option value="Personal Development">Personal Development</option>
+          <option value="Health & Fitness">Health & Fitness</option>
+          <option value="Financial Goals">Financial Goals</option>
+          <option value="Hobbies & Interests">Hobbies & Interests</option>
+          <option value="Relationships & Social">Relationships & Social</option>
+          <option value="Travel & Adventure">Travel & Adventure</option>
+          <option value="Charity & Giving Back">Charity & Giving Back</option>
+          <option value="General">General</option>
+        </select>
+        <input
+          type="text"
+          id="editGoalInput"
+          class="bg-[#FAF8F8] rounded-xl flex-grow ps-3 text-stone-950 focus-visible:outline-none h-[48px]"
+        />
+        <button
+          id="changeBtn"
+          class="bg-[#CD1624] p-3 rounded-xl w-[100px] block ml-auto"
+        >
+          Change
         </button>
       </section>
     </section>
@@ -125,14 +191,14 @@
               <p class="goal-text text-lg"></p>
             </div>
             <div class="flex gap-2">
-              <button class="bg-[#23856D] p-1 rounded-lg">
+              <button class="edit-btn bg-[#23856D] p-1 rounded-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-4"
+                  class="size-4 pointer-events-none"
                 >
                   <path
                     stroke-linecap="round"
@@ -148,7 +214,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-4"
+                  class="size-4 pointer-events-none"
                 >
                   <path
                     stroke-linecap="round"
@@ -164,7 +230,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-4"
+                  class="size-4 pointer-events-none"
                 >
                   <path
                     stroke-linecap="round"
@@ -178,6 +244,7 @@
         </div>
       </div>
     </template>
-    <script type="module" src="./main.js"></script>
+    
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
