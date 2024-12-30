@@ -17,7 +17,7 @@
       </h1>
       <button
         id="addGoalBoxBtn"
-        class="add-goal-btn bg-[#CD1624] text-[#FAF8F8] flex gap-2 p-3 rounded-xl m-auto "
+        class="add-goal-btn bg-[#CD1624] text-[#FAF8F8] flex gap-2 p-3 rounded-xl m-auto"
       >
         Add your goals<svg
           xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,9 @@
           <option value="Health">Health</option>
           <option value="Financial Goals">Financial Goals</option>
           <option value="Hobbies">Hobbies</option>
-          <option value="Relationships and Social">Relationships and Social</option>
+          <option value="Relationships and Social">
+            Relationships and Social
+          </option>
           <option value="Travel">Travel</option>
           <option value="Charity">Charity</option>
           <option value="General">General</option>
@@ -109,7 +111,7 @@
       </section>
     </section>
 
-    <section 
+    <section
       id="editBox"
       class="absolute min-w-[450px] -translate-x-[50%] left-[50%] mt-5 p-10 bg-[#006F57] text-[#FAF8F8] rounded-md drop-shadow-xl hidden"
     >
@@ -138,12 +140,14 @@
           id="editTitle"
           class="bg-[#FAF8F8] rounded-xl flex-grow ps-3 text-stone-950 focus-visible:outline-none h-[48px]"
         >
-         <option value="">Choose a category</option>
+          <option value="">Choose a category</option>
           <option value="Personal Development">Personal Development</option>
           <option value="Health">Health</option>
           <option value="Financial Goals">Financial Goals</option>
           <option value="Hobbies">Hobbies</option>
-          <option value="Relationships and Social">Relationships and Social</option>
+          <option value="Relationships and Social">
+            Relationships and Social
+          </option>
           <option value="Travel">Travel</option>
           <option value="Charity">Charity</option>
           <option value="General">General</option>
@@ -187,7 +191,23 @@
           <h5 class="title-text text-sm font-bold mb-1 text-left"></h5>
           <div class="flex justify-between">
             <div class="flex gap-3 items-center justify-center font-playwrite">
-              <div class="w-0.5 h-5 bg-[#CD1624]"></div>
+              <div class="icon w-0.5 h-5 bg-[#CD1624]"></div>
+              <div class="icon-done hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 text-yellow-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+                  />
+                </svg>
+              </div>
               <p class="goal-text text-lg"></p>
             </div>
             <div class="flex gap-2">
@@ -207,7 +227,7 @@
                   />
                 </svg>
               </button>
-              <button class="bg-[#23856D] p-1 rounded-lg">
+              <button class="done-btn bg-[#23856D] p-1 rounded-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -244,7 +264,7 @@
         </div>
       </div>
     </template>
-    
+
     <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>

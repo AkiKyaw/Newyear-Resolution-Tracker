@@ -1,4 +1,4 @@
-import { addBox, addGoal, delGoal, editGoal, hideBox } from "./app.js";
+import { addBox, addGoal, delGoal, doneGoal, editGoal, hideBox } from "./app.js";
 import { editBox, goalInput, title } from "./selector.js";
 
 // add add-your-goal box
@@ -34,7 +34,7 @@ export const listGroupHandler = (event) => {
     editGoal(event.target.closest(".list").id);
   }
 
-  // if (event.target.classList.contains("list-done-check")) {
-  //   doneList(event.target.closest(".list").id);
-  // }
+  if (event.target.classList.contains("done-btn")) {
+    doneGoal(event.target.closest(".list").id);
+  }
 };

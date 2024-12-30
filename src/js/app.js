@@ -51,11 +51,25 @@ export const editGoal = (listId) => {
 
   editTitle.value = titleText.innerText;
   editGoalInput.value = goalText.innerText;
-  console.log(editTitle.value);
 
   changeBtn.addEventListener("click", () => {
     titleText.innerText = editTitle.value;
     goalText.innerText = editGoalInput.value;
     editBox.classList.add("hidden");
   });
+};
+
+export const doneGoal = (listId) => {
+  const currentList = document.querySelector(`#${listId}`);
+  const editBtn = currentList.querySelector(".edit-btn");
+  const icon = currentList.querySelector(".icon");
+  const iconDone = currentList.querySelector(".icon-done");
+
+  icon.classList.toggle("hidden");
+  iconDone.classList.toggle("hidden");
+
+  currentList.classList.toggle("opacity-50");
+  currentList.classList.toggle("scale-90");
+  
+  editBtn.classList.toggle("hidden");
 };
