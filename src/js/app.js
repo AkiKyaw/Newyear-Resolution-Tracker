@@ -132,9 +132,10 @@ export const doneGoal = (listId) => {
   currentList.classList.toggle("opacity-50");
   currentList.classList.toggle("scale-90");
   currentList.classList.add("duration-150");
-
   editBtn.classList.toggle("hidden");
-
+  
+  if(currentList.classList.contains("opacity-50")){
   Swal.fire(`Well done🎉` + `\n` + `You've completed a goal✨`);
+  }
   saveGoalsToStorage(); 
 };
