@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { progressBar } from "./selector.js";
 
 const updateProgressBar = () => {
@@ -10,6 +11,10 @@ const updateProgressBar = () => {
 
   const progressPercent = document.querySelector("#progressPercent");
   progressPercent.innerText = `${Math.round(progress)}%`;
+
+  if(progress == 100 ){
+    Swal.fire(`Congratulations🎉` + `\n` + `You've completed all goals✨`);
+  }
 };
 
 export default updateProgressBar;

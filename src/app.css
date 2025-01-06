@@ -18,12 +18,12 @@
   @apply max-w-[300px];
 }
 
-.swal2-warning{
-    @apply w-9 h-9;
+.swal2-warning {
+  @apply w-9 h-9;
 }
 
-.swal2-warning .swal2-icon-content{
-    @apply text-[2.5rem];
+.swal2-warning .swal2-icon-content {
+  @apply text-[2.5rem];
 }
 
 #swal2-title {

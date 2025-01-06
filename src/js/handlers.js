@@ -6,6 +6,7 @@ import {
   doneGoal,
   editGoal,
   hideBox,
+  saveGoalsToStorage,
 } from "./app.js";
 import { editBox, goalInput, listGroup, title } from "./selector.js";
 
@@ -28,6 +29,8 @@ export const addBtnHandler = (event) => {
     hideBox();
   }
 };
+
+// del, edit and done goals
 
 export const listGroupHandler = (event) => {
   const list = event.target.closest(".list");
@@ -64,6 +67,7 @@ export const delAllBtnHandler = (event) => {
           list.classList.add("animate__animated", "animate__flipOutX");
           list.addEventListener("animationend", () => {
             list.remove();
+            saveGoalsToStorage();
           });
         });
       }
