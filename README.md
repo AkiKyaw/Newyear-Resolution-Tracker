@@ -1,4 +1,4 @@
-# Better Year Resolutions Tracker 🎯
+# Better Year Resolution Tracker 🎯
 
 Welcome to the **Better Year Resolution Tracker**!  
 This is a web application designed to help you set, track, and achieve your New Year resolutions. Whether you're aiming for personal growth, learning new skills, or forming better habits, this tool is here to keep you on track throughout the year.
