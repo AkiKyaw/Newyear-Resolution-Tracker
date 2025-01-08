@@ -72,10 +72,10 @@ export const createNewList = (currentTaskTitle, currentTask) => {
   return list;
 };
 
-
 export const addGoal = (titleText, text) => {
   listGroup.append(createNewList(titleText, text));
   goalInput.value = null;
+  saveGoalsToStorage();
 };
 
 export const delGoal = (listId) => {
